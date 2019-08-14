@@ -2,7 +2,7 @@
 <config>
     <modules>
         <ConversionBug_Core>
-            <version>0.1.0</version>
+            <version>0.4.0</version>
         </ConversionBug_Core>
     </modules>
     <adminhtml>

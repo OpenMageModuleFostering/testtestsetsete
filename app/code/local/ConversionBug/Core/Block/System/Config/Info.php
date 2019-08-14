@@ -16,6 +16,17 @@ class ConversionBug_Core_Block_System_Config_Info extends Mage_Adminhtml_Block_A
         $adminEmail = $adminUser->getUser()->getEmail();
         $url = Mage::getBaseUrl();
         $ip = $_SERVER['REMOTE_ADDR'];
+        $modules = Mage::getConfig()->getNode('modules')->children();
+        $modulesArray = (array)$modules;
+        Mage::log($modulesArray,null,"modules.log");
+        $options = array();
+        foreach($modules as $key => $value):
+            if (strpos($key, 'ConversionBug') !== FALSE):
+                $options[] = $key;
+            endif;
+        endforeach;
+        $string = implode(', ', $options);
+        Mage::log($string,null,"string.log");
 
         $html = <<<HTML
             <div class="cb-intro">
@@ -30,7 +41,7 @@ class ConversionBug_Core_Block_System_Config_Info extends Mage_Adminhtml_Block_A
                             <a href="mailto:support@conversionbug.com">support@conversionbug.com</a>
                          </li>
                          <li class="cb-skype">
-                            <a href="#">convertsionbug</a>
+                            <a href="#">conversionbug</a>
                          </li>
                         <ul>
                        </div> 
@@ -39,8 +50,10 @@ class ConversionBug_Core_Block_System_Config_Info extends Mage_Adminhtml_Block_A
                   <script>
                    var email = "$adminEmail",
                        url = "$url",
-                       ip = "$ip";                       
-                      conversionbug.init(url,email,ip ); 
+                       ip = "$ip",    
+                       //extension = "M1-ExitIntent";                   
+                      extension = "$string";                         
+                      conversionbug.init(url,email,ip,extension); 
                   </script>
 HTML;
 

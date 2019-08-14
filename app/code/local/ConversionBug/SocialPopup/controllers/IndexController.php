@@ -11,9 +11,9 @@ require_once $includePath;
 
 class ConversionBug_SocialPopup_IndexController extends Mage_Core_Controller_Front_Action {
 
+    
     public function redirecUriAction() {
         $data = $this->getRequest()->getParams();
-
         if (isset($data['code'])) {
             $gClient = new Google_Client();
             $gClient->setApplicationName('Login to ' . Mage::getUrl());
@@ -21,9 +21,7 @@ class ConversionBug_SocialPopup_IndexController extends Mage_Core_Controller_Fro
             $gClient->setClientSecret(Mage::helper('socialpopup/google')->_getClientSecret());
             $gClient->setRedirectUri(Mage::getUrl('socialpopup/index/redirecUri'));
             $google_oauthV2 = new Google_Oauth2Service($gClient);
-
             $gClient->authenticate($_GET['code']);
-
             $url = Mage::getUrl('customer/account');
             if ($gClient->getAccessToken()) {
                 $user = $google_oauthV2->userinfo->get();
