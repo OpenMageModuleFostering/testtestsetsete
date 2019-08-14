@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21 Jul, 2015, 4:36:32 PM
+    Author     : shiv
+*/
+
+.recently-view .price-box {
+    clear: both;
+    display: block;
+}
+.recently-view .cart-remove{ float: right;}
+.side-content{padding:50px;}
+.block-recently-viewed{border:1px solid silver;padding:20px 10px;margin-bottom: 20px;margin-top: 20px;margin-right:0 !important;}
+.block-recently-viewed h6{text-align: center;}
+.cb-recently-view .side-content-view{float: right;width: 50%;text-align: right;}
+.cb-recently-view h6{width:50%;float:left}
+.cb-recently-view #owl-demo{clear:both;}
+.recently-view .products-list .product-image{marign:0;display: inline;}
+.recently-view .products-list .product-shop {
+    float: right;
+    width: 60%;
+}
+.cb-recently-viewed .products-grid .item {
+    min-height: 375px !important;
+}
+.cb-recently-viewed .actions{display:block !important;position: absolute;bottom: 0;width:90%;}

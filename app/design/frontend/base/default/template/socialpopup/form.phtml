@@ -1,0 +1,195 @@
+<?php
+/**
+ * ConversionBug
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ConversionBug.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.ConversionBug.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category 	ConversionBug
+ * @package 	ConversionBug_SocialPopup
+ * @copyright 	Copyright (c) 2015 ConversionBug (http://www.ConversionBug.com/)
+ * @license 	http://www.ConversionBug.com/license-agreement.html
+ * @author  shiv kumar singh
+ * @email shivam.kumar@conversionbug.com
+ */
+/*
+$result = Mage::getModel('customer/customer')
+              ->getCollection()
+              ->addAttributeToSelect('cb_socialpopup_customer')
+              ->addAttributeToFilter('cb_socialpopup_customer',1)->load();
+
+if (is_object($result)) {
+    
+}
+ * 
+ */
+
+//if($_SERVER['REMOTE_ADDR']=="182.73.194.106"):
+?>
+<div style="display:none">
+    
+    <div class="cb-socialpopup-login" id='cb-socialpopup_content'>
+        <!-- static block -->
+        <div class="cb-static-block">
+                <?php echo $this->getChildHtml('cb-block');?>
+        </div>
+        <div class="cb-inner-block">
+        <!-- social media login -->
+        <div class="cb-social-login" style="">
+           <?php if($this->_googleEnabled() || $this->_facebookEnabled()): ?>
+<div class="cb-center-block">
+  <hr class="pull-left"/><?php echo $this->__('Login With');?><hr class="pull-right" />
+</div>     
+           <div class="cb-social-links">
+             <?php if($this->_googleEnabled()): ?>
+                <a target="_blank" href="<?php echo $this->_getButtonUrl()?>"><img class="pull-left" src="<?php echo $this->getSkinUrl('images/conversionbug/google.png'); ?>" title="Login with Google" alt="Google Login"/></a>
+            <?php endif; ?>
+            <?php if($this->_facebookEnabled()): ?>
+                    <a href="<?php echo $this->_getFacebookButtonUrl()?>"><img class="pull-right" src="<?php echo $this->getSkinUrl('images/conversionbug/facebook.png'); ?>" title="Login with Facebook" alt="Facebook Login"/></a>
+            <?php endif; ?>
+            </div>
+<div class="cb-center-block">
+   <hr class="pull-left"/><?php echo $this->__('OR');?><hr class="pull-right" />
+</div>
+<?php endif; ?>
+
+        </div>
+        
+        <!-- forgot password section -->
+        <div class="cb-socialpopup-forgot"><?php echo $this->getChildHtml('forgotPassword');?></div>
+        
+        <!-- login form -->
+        <div class="account-create cb-login">
+            <form action="<?php echo $this->getUrl('customer/account/createpost') ?>" method="post" id="socialpopup-login">
+                <div class="">
+                    <ul class="form-list">
+                        <li>
+                 <!--           <label for="email_address" class="required"><em>*</em><?php echo $this->__('Enter e-mail Address') ?></label>-->
+                            <div class="input-box"  data-tooltip="ERROR">
+                                   <a href="#"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)?>/wysiwyg/mail.png"/></a>
+                                <input  type="text" name="email" id="email_address" value="" title="<?php echo $this->__('Email Address') ?>" placeholder="<?php echo $this->__('Enter e-mail Address') ?>" class="input-text validate-email required-entry" />
+                            </div>
+                        </li>
+                        <li class="fields">
+                            <div class="">
+                           <!--     <label for="password" class="required"><em>*</em><?php echo $this->__('Enter Password') ?></label>-->
+                                <div class="input-box"  data-tooltip="ERROR">
+                                   <a href="#"><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)?>/wysiwyg/password.png"/></a>
+                                    <input type="password" name="password" id="password" title="<?php echo $this->__('Password') ?>" placeholder="<?php echo $this->__('Enter Password') ?>" class="input-text required-entry validate-password" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="buttons-set cb-loginout-btns">
+                    <input type="hidden" name="cb-registartion" value="1" />
+                    <button type="submit" title="<?php echo $this->__('Submit') ?>" class="button pull-right"><span><span><?php echo $this->__('Login') ?></span></span></button>
+                    or
+                    <button type="submit" onClick="return changeAction();" title="<?php echo $this->__('Sign up') ?>" class="button pull-left"><span><span><?php echo $this->__('Sign up') ?></span></span></button>
+                </div>
+                
+                <div class="buttons-set">
+                    <a id="forgotpassword" href="#" class="f-left"><u><?php echo $this->__('Forgot Your Password?') ?></u></a>
+                </div>
+            
+            </form>
+            <script type="text/javascript">
+                //<![CDATA[
+                var dataForm = new VarienForm('socialpopup-login');
+                //]]>
+                function changeAction(){
+                    jQuery('socialpopup-login').attr('action', '<?php echo $this->getUrl('customer/account/loginpost') ?>')
+                }
+                jQuery('#forgotpassword,#back-login').click(function(){ 
+                     jQuery('.cb-socialpopup-forgot').toggle();
+                     jQuery('.cb-login').toggle();
+                     jQuery('.cb-social-login').toggle();
+                    return false; });
+            </script>
+        </div>
+    
+    </div>
+    </div>
+</div>
+<?php
+$name = 'popupcookies';
+$value = 'true';
+$getCookies = Mage::getModel('core/cookie')->get($name);
+?>
+<?php if((!Mage::getSingleton("customer/session")->isLoggedIn()) && ($getCookies == "")) ://if ($getCookies == ""): ?>
+<script type="text/javascript" id="colorbox-popup">
+    jQuery(document).one('mouseleave', leaveFromTop);
+    function leaveFromTop(e) {
+        if (e.clientY < 0) // less than 60px is close enough to the top
+            jQuery.ajax({
+                type: 'GET',
+                url: "<?php echo Mage::getUrl('socialpopup/index/updateCount/'); ?>",
+                dataType: 'html',
+                success: function () {
+                    //alert('updated');
+                }
+            });
+            signin();
+    }
+    
+</script>
+<?php Mage::getModel('core/cookie')->set($name, $value,86400); ?>
+<?php endif; ?>
+<?php //endif; ?>
+<script type="text/javascript">
+        function signin(){
+        jQuery.colorbox({
+                href: '#cb-socialpopup_content',
+                overlayClose: true,
+                escKey: false,
+                closeButton: false,
+                open: true,
+                inline: true,
+                width: '347px',
+                height: '500px',
+                fixed: true,
+                opacity: 0.4,
+                onLoad: function () {
+                    jQuery('.wrapper').css('filter', 'blur(4px)');
+                    jQuery('.wrapper').css('-webkit-filter', 'blur(4px)');
+                    jQuery('.wrapper').css('-moz-filter', 'blur(4px)');
+                    jQuery('.wrapper').css('-o-filter', 'blur(4px)');
+                    jQuery('.wrapper').css('-ms-filter', 'blur(4px)');
+
+                },
+                onClosed: function () {
+                    jQuery('.wrapper').css('filter', 'blur(0px)');
+                    jQuery('.wrapper').css('-webkit-filter', 'blur(0px)');
+                    jQuery('.wrapper').css('-moz-filter', 'blur(0px)');
+                    jQuery('.wrapper').css('-o-filter', 'blur(0px)');
+                    jQuery('.wrapper').css('-ms-filter', 'blur(0px)');
+                    //jQuery("#colorbox-popup").remove();
+                },
+                onComplete: function () {
+                    updateCount();
+                },
+            });
+            jQuery('#colorbox').addClass("animated zoomInUp");  
+    }
+    function updateCount(){
+        jQuery.ajax({
+                type: 'GET',
+                url: "<?php echo Mage::getUrl('socialpopup/index/updateCount/button/true'); ?>",
+                dataType: 'html',
+                success: function () {
+                    //alert('updated');
+                }
+            });
+    }
+    jQuery(document).ready(function () {
+            jQuery("a[href*='customer/account/login']").attr("href", "javascript:signin();")
+        });
+</script>

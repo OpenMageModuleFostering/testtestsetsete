@@ -1,0 +1,49 @@
+<script type="text/javascript">
+//<![CDATA[
+   // jQuery(document).ready(function ($) {
+     //   $('.content-header').remove();
+    //});
+</script>
+
+    <?php
+        $collection = $this->getExtensions();
+        $client = new SoapClient('http://products.conversionbug.com/api/soap/?wsdl=1');
+        $session = $client->login('cbdeveloper', 'cbdeveloper@123');
+        $result = $client->call($session, 'product.listmone'); //ConversionBug custom API
+        $client->endSession($session);
+        $storeurl = "http://products.conversionbug.com/";
+    ?>
+     <?php
+
+     ?>
+        <div class="cb-products">
+            <ul class="item-extensions">
+                <?php foreach($result as $products){?>
+                    <?php if($products['status'] != '2'){?>
+                        <li>
+                            <div class="images">
+                                <a href="<?php echo $storeurl.$products['url_path'] ?>" target="_blank"><img src="<?php echo $storeurl. 'media/catalog/product/'.$products['image'] ?>"/></a>
+                            </div>
+                            <div class="title">
+                                <a href="<?php echo $storeurl.$products['url_path'] ?>" target="_blank"><?php echo $products['name'] ?></a>
+                            </div>
+                            <div class="product-desc">
+                                <?php echo $products['short_description'] ?>
+                            </div>
+                            <div class="rating-price">
+                                <div class="rating"><?php echo number_format($products['ratings'],1,'.',''); ?></div>
+                                <div class="price">$<?php echo substr($products['price'], 0, -2) ?></div>
+                            </div>
+                        </li>
+
+                        <?php
+                    }
+
+                }
+                ?>
+            </ul>
+        </div>
+
+
+
+

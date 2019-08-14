@@ -1,0 +1,66 @@
+<?xml version="1.0"?>   
+<!--
+/**
+ * ConversionBug
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ConversionBug.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.ConversionBug.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    ConversionBug
+ * @package     ConversionBug_SocialPopup
+ * @copyright   Copyright (c) 2015 ConversionBug (http://www.ConversionBug.com/)
+ * @license     http://www.ConversionBug.com/license-agreement.html
+ * @author  shiv kumar singh
+ * @email shivam.kumar@conversionbug.com
+ */
+-->
+<layout version="0.1.0">  
+    <default>
+        <reference name="head">
+            <!-- <action method="addJs">
+                <script>conversionbug/jquery.colorbox.js</script>
+            </action>  --> 
+            <action method="addCss">
+                <stylesheet>css/conversionbug/colorbox.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/conversionbug/socialpopup.css</stylesheet>
+            </action>
+            <action method="addJs">
+                <link>conversionbug/jquery.colorbox.js</link>
+            </action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="socialpopup/google" name="socialpopup" template="socialpopup/form.phtml">
+                <block type="cms/block" name="cb-block">
+                    <action method="setBlockId">
+                        <block_id>cb-static-block</block_id>
+                    </action>
+                </block>
+                <block type="customer/account_forgotpassword" name="forgotPassword" template="socialpopup/forgotpassword.phtml" />
+            </block>
+        </reference>
+    </default>
+    <socialpopup_index_facebook>
+        <reference name="content">
+            <block type="socialpopup/google" name="socialpopup" template="socialpopup/form.phtml">
+                <block type="cms/block" name="cb-block">
+                    <action method="setBlockId">
+                        <block_id>cb-static-block</block_id>
+                    </action>
+                </block>
+                <block type="customer/account_forgotpassword" name="forgotPassword" template="socialpopup/forgotpassword.phtml" />
+            </block>
+        </reference>
+    </socialpopup_index_facebook>
+
+</layout>   
+    

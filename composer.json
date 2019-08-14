@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/testtestsetsete",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "This extension helps convert first time visitors into registered customers & registered customers into buyers.",
+    "authors": [
+    {
+        "name": "shiv kumar singh",
+        "email": "shivam.kumar@conversionbug.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

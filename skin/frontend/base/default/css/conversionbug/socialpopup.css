@@ -1,0 +1,283 @@
+/**
+ * ConversionBug
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ConversionBug.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.ConversionBug.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category 	ConversionBug
+ * @package 	ConversionBug_SocialPopup
+ * @copyright 	Copyright (c) 2015 ConversionBug (http://www.ConversionBug.com/)
+ * @license 	http://www.ConversionBug.com/license-agreement.html
+ * @author  shiv kumar singh
+ * @email shivam.kumar@conversionbug.com
+ */
+
+.cb-socialpopup-login{}
+.cb-socialpopup-forgot{display:none;}
+.cb-static-block img {
+  border-bottom: 4px solid #FF6801;
+  margin: auto;
+  max-width: 347px;
+}
+#cboxContent {
+  margin-top: 20px;
+  /* background: #000; */
+  width: 100% !important;
+  height: 100% !important;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.cb-loginout-btns {
+  text-align: center !important;
+  line-height: 33px;
+  font-size: 12px;
+}
+.cb-loginout-btns button{
+  background: #FF6801;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 5px;
+  min-width: inherit !important;
+}
+.cb-loginout-btns button:hover{
+  background: #FF6801;
+  opacity: 0.6;
+}
+
+.cb-inner-block {
+  padding: 0px 35px;
+}
+.cb-offer-text{
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+.cb-center-block {
+width: 100%;
+  text-align: center;
+  clear: both;
+  line-height: 39px;
+	font-size: 12px;
+}
+
+.cb-center-block  hr {
+   
+    width: 35%;
+     -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #eee -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.cb-inner-block .input-box {
+    position: relative;
+}
+.cb-inner-block .input-box a {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cb-inner-block .input-box a img {
+  padding: 5px 5px;
+  border-right: 1px solid #9B9B9B;
+  margin: 6px 2px;
+}
+.cb-inner-block .input-box input {
+  text-indent: 25px;
+  border-radius: 6px;
+   width: 277px !important;
+}
+.cb-inner-block .input-box input:focus {
+border: 2px solid #FF6801;
+  border-radius: 6px;
+}
+.cb-social-links{
+  clear: both;
+}
+.cb-socialpopup-forgot h1{ 
+  font-size: 22px;
+  padding: 10px 0;
+}
+.cb-socialpopup-forgot .page-title {margin: 0;}
+.cb-socialpopup-forgot .form-list {
+    margin-top: 20px !important;
+}
+.cb-loginout-btns .button span span{
+    line-height: 10px;
+    padding: 10px 3px;
+    width: auto;
+    color:white;
+  }
+#forgotpassword .cb-social-login{
+display: none;
+}
+.cb-inner-block [data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+.cb-inner-block [data-tooltip]:before,
+.cb-inner-block [data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  opacity: 0;
+  pointer-events: none;
+}
+#socialpopup-login .fieldset{
+  padding:10px;
+}
+
+/* Position tooltip above the element 
+.cb-inner-block [data-tooltip]:before {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #FF0000;
+
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble 
+.cb-inner-block [data-tooltip]:after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid ;
+  border-top: 5px solid #FF0000;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover 
+.cb-inner-block [data-tooltip]:hover:before,
+.cb-inner-block [data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+.cb-inner-block p.required, .validation-advice {
+  margin: 5px 0 0;
+  color: #df280a;
+  font-size: 10px;
+}
+*/
+/* Form Validation */
+.cb-inner-block  .input-box {
+  position: relative !important;
+}
+.cb-inner-block .validation-advice {
+  background: #FF6801;
+  bottom: -7px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 13px;
+  min-height: 13px;
+  padding: 7px;
+  position: absolute;
+  right: -46px;
+  width: 120px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.cb-inner-block  .validation-advice:after {
+  position: absolute;
+  left: -8px;
+  bottom: 8px;
+  content: " ";
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #FF6801;
+}
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
+    transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
+    transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+.zoomInUp {
+  -webkit-animation-name: zoomInUp;
+  animation-name: zoomInUp;
+}
+
+

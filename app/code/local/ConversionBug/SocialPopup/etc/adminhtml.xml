@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ConversionBug
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ConversionBug.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.ConversionBug.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category 	ConversionBug
+ * @package 	ConversionBug_SocialPopup
+ * @copyright 	Copyright (c) 2015 ConversionBug (http://www.ConversionBug.com/)
+ * @license 	http://www.ConversionBug.com/license-agreement.html
+ * @author  shiv kumar singh
+ * @email shivam.kumar@conversionbug.com
+ */
+-->
+<config>
+    <menu>
+        <socialpopup module="socialpopup">
+            <title>Social Login</title>
+            <sort_order>71</sort_order>
+            <children>
+                <items module="socialpopup">
+                    <title>Dashboard</title>
+                    <sort_order>0</sort_order>
+                    <action>socialpopup/adminhtml_socialpopup</action>
+                </items>
+            </children>
+        </socialpopup>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <ConversionBug_SocialPopup>
+                        <title>ConversionBug Social Login</title>
+                        <sort_order>10</sort_order>
+                    </ConversionBug_SocialPopup>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <socialpopup translate="title" module="socialpopup">
+                                        <title>ConversionBug Social Login</title>
+                                    </socialpopup>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

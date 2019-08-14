@@ -1,0 +1,67 @@
+#owl-demo .item
+{
+	border-radius: 3px;
+	color: #FFF;
+	display: block;
+	margin: 5px;
+	moz-border-radius: 3px;
+	padding: 20px 0px;
+	text-align: center;
+	webkit-border-radius: 3px;
+}
+.owl-theme .owl-controls .owl-buttons div
+{
+	padding: 5px 9px;
+}
+.owl-theme .owl-buttons i
+{
+	margin-top: 2px;
+}
+//To move navigation buttons outside use these settings:
+ .owl-theme .owl-controls .owl-buttons div
+{
+	position: absolute;
+}
+.owl-theme .owl-controls .owl-buttons .owl-prev
+{
+	left: -3px;
+	top: 130px;
+}
+.owl-theme .owl-controls .owl-buttons .owl-next
+{
+	right: -3px;
+	top: 130px;
+}
+#owl-demo .item img
+{
+	height: 150px;
+	margin: auto;
+	margin-top: 6px;
+	width: 150px;
+}
+.owl-item h6:hover
+{
+	color: red !important;
+	text-decoration: none;
+}
+.owl-item h6
+{
+	color: black;
+	padding-bottom: 10px;
+	text-decoration: none;
+}
+.owl-item a:hover
+{
+	color: red;
+	text-decoration: none;
+}
+.owl-item .item .product-info {
+      min-height: 150px;
+    padding-bottom: 50px;}
+.owl-item .item .actions {
+    bottom: 0;
+    min-height: 85px;
+    padding-top: 10px;
+    position: absolute;
+    width: 100%;
+}
